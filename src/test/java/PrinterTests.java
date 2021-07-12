@@ -18,13 +18,13 @@ public class PrinterTests {
 
     @Test
     public void testPrint3PagesRemoves3Pages(){
-        printer.printPages(3);
+        printer.printPages(3, 1);
         assertEquals(7, printer.getSheetsRemaining());
     }
 
     @Test
     public void testPrintWillNotPrintIfTooManyPagesRequested(){
-        printer.printPages(12);
+        printer.printPages(5, 5);
         assertEquals(10, printer.getSheetsRemaining());
     }
 
@@ -35,7 +35,7 @@ public class PrinterTests {
 
     @Test
     public void testTonerIsReducedForEachPage(){
-        printer.printPages(1);
+        printer.printPages(1, 1);
         assertEquals(9, printer.getRemainingToner());
     }
 }

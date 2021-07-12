@@ -12,10 +12,10 @@ public class Printer {
         return this.sheetsRemaining;
     }
 
-    public void printPages(int pages) {
-        if(pages <= this.sheetsRemaining){
-            this.sheetsRemaining -= pages;
-            this.toner -= pages;
+    public void printPages(int pages, int copies) {
+        if((pages * copies) <= this.sheetsRemaining){
+            this.sheetsRemaining -= (pages * copies);
+            this.toner -= (pages * copies);
         }
     }
 
